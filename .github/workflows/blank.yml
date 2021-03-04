@@ -5,11 +5,9 @@ on: [push]
 jobs:
   build:
 
-    runs-on: macOS-latest
+    runs-on: windows-2019
 
     steps:
     - uses: actions/checkout@v1
     - name: Run a multi-line script
-      run: |
-        echo $RUNNER_TOOL_CACHE
-        echo $AGENT_TOOLSDIRECTORY
+      run: Get-Volume
