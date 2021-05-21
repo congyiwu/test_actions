@@ -8,12 +8,15 @@ jobs:
     runs-on: windows-2019
   
     steps:
-    - uses: actions/checkout@v1
+#    - uses: actions/checkout@v1
     
-    - name: Run a multi-line script
-      run: fsutil volume diskfree 'c:'
+#    - name: Run a multi-line script
+#      run: fsutil volume diskfree 'c:'
 
-    - uses: actions/setup-python@v2
-      with:
-        python-version: '3.10.0-beta.1' # Version range or exact version of a Python version to use, using SemVer's version range syntax
-        architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
+#    - uses: actions/setup-python@v2
+#      with:
+#        python-version: '3.10.0-beta.1' # Version range or exact version of a Python version to use, using SemVer's version range syntax
+#        architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
+
+    - name: Get env vars
+      run: dir 'env:' | Format-List
