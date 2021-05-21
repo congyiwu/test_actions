@@ -1,13 +1,19 @@
 name: CI
 
-on: [push]
+on: [push, workflow_dispatch]
 
 jobs:
   build:
 
-    runs-on: windows-2016
-
+    runs-on: windows-2019
+  
     steps:
     - uses: actions/checkout@v1
+    
     - name: Run a multi-line script
       run: fsutil volume diskfree 'c:'
+
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.10.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
+        architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
