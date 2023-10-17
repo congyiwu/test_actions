@@ -16,5 +16,6 @@ jobs:
 
     - name: script
       run: |
+        sudo ls /dev/disk/by-id/
         sudo cat /var/cache/debconf/config.dat
-        dpkg-reconfigure grub-efi-amd64-signed
+        sudo dpkg-reconfigure grub-efi-amd64-signed
