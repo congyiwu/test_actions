@@ -16,6 +16,9 @@ jobs:
 
     - name: script
       run: |
+        sudo apt-cache policy
         sudo ls /dev/disk/by-id/
+        sudo cat /var/cache/debconf/config.dat
+        sudo dpkg-reconfigure shim-signed
         sudo cat /var/cache/debconf/config.dat
         sudo dpkg-reconfigure shim-signed
